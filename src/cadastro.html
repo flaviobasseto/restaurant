@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Restaurant App!</title>
+</head>
+
+<body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between fixed-top">
+        <a href="#" class="navbar-brand"><img src="imgs/logo.png" height="60px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <form action="" class="login" name="f1" onblur="return valida_form(this)">
+        <b><label for="" id="cadastro-usuario">Cadastro de novo usuário</label></b>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" onblur="validacaoEmail(f1.inputEmail)">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword">Senha</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="inputCPF">CPF</label>
+                <input type="text" class="form-control" id="inputCPF" placeholder="CPF" maxlength="15">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputRG">RG</label>
+                <input type="text" class="form-control" id="inputRG" placeholder="RG" maxlength="12">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputFone">Fone</label>
+                <input type="text" class="form-control" id="inputFone" placeholder="Fone" maxlength="13">
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        $('#inputCPF').mask('000.000.000-00', {
+            reverse: true
+        });
+        $('#inputFone').mask('00 00000-0000', {
+            reverse: true
+        })
+        $('#inputRG').mask('00.000.000-0', {
+            reverse: true
+        });
+
+        function valida_form() {
+            var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            if (!filter.test(document.getElementById("inputEmail").value)) {
+                alert('Por favor, digite o email corretamente');
+                document.getElementById("inputEmail").focus();
+                return false
+            }
+            return true
+        }
+    </script>
+</body>
+
+</html>

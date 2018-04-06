@@ -14,12 +14,38 @@
 #cadastro-usuario {
     font-size: 20px;
     color: #007BFF;
+    margin-bottom: 35px;
 }
 
 .form-control {
-    background: #C5C2DD;
+    background: #C0C0C0;
 }
 
 #cadastro-usuario {
     padding-bottom: 20px;
+}
+
+#inputNascimento,
+#inputCPF,
+#inputEmail,
+#inputSenha,
+#inputFone,
+#inputRG,
+#inputPassword {
+    text-align: center;
+}
+
+.btn .btn-success {
+    margin-top: 30px;
+}
+
+.form-group button {
+    padding: 6px 14px 6px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+#button-group {
+    padding-left: 40%;
 }

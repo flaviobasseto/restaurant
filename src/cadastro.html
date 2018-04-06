@@ -38,52 +38,46 @@
     </nav>
 
     <form action="" class="login" name="f1" onblur="return valida_form(this)">
-        <b><label for="" id="cadastro-usuario">Cadastro de novo usuário</label></b>
+        <b><label for="" id="cadastro-usuario">CADASTRO DE NOVO USUÁRIO</label></b>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" onblur="validacaoEmail(f1.inputEmail)">
+                <input type="email" class="form-control" id="inputEmail" onblur="validacaoEmail(f1.inputEmail)">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword">Senha</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" class="form-control" id="inputPassword">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="inputCPF">CPF</label>
-                <input type="text" class="form-control" id="inputCPF" placeholder="CPF" maxlength="15">
+                <input type="text" class="form-control" id="inputCPF" maxlength="15">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputRG">RG</label>
-                <input type="text" class="form-control" id="inputRG" placeholder="RG" maxlength="12">
+                <input type="text" class="form-control" id="inputRG" maxlength="12">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-2">
                 <label for="inputFone">Fone</label>
-                <input type="text" class="form-control" id="inputFone" placeholder="Fone" maxlength="13">
+                <input type="text" class="form-control" id="inputFone" maxlength="13">
             </div>
+            <div class="form-group col-md-2">
+                <label for="inputNascimento">Data de nascimento</label>
+                <input type="text" class="form-control" id="inputNascimento" maxlength="10">
+            </div>
+        </div>
+        <div class="form-group col-md-12" id="button-group">
+            <button class="btn btn-success" type="submit">Finalizar</button>
+            <button class="btn btn-warning" type="reset">Limpar</button>
+            <button class="btn btn-danger" type="submit">Cancelar</button>
         </div>
     </form>
     <script type="text/javascript">
-        $('#inputCPF').mask('000.000.000-00', {
-            reverse: true
-        });
-        $('#inputFone').mask('00 00000-0000', {
-            reverse: true
-        })
-        $('#inputRG').mask('00.000.000-0', {
-            reverse: true
-        });
-
-        function valida_form() {
-            var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            if (!filter.test(document.getElementById("inputEmail").value)) {
-                alert('Por favor, digite o email corretamente');
-                document.getElementById("inputEmail").focus();
-                return false
-            }
-            return true
-        }
+        mask_cpf('#inputCPF');
+        mask_rg('#inputRG');
+        mask_fone('#inputFone');
+        mask_data('#inputNascimento')
     </script>
 </body>
 
